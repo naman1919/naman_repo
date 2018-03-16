@@ -1,0 +1,39 @@
+body
+{
+	text-align: center;
+	background-color:brown;
+}
+#sdk
+{
+	margin-left:370px;
+}
+td,tr
+{
+	border:1px solid gray;
+	width:45px;
+	height:45px;
+}
+input
+{
+	width:45px;
+	height:45px;
+	text-align: center;
+	font-style: bold;
+	font-size: 20px;
+}
+td:nth-child(even)
+{
+	background-color: pink;
+}
+td:first-child {
+  border-left:solid;
+}
+td:nth-child(3n) {
+  border-right:solid ;
+}
+tr:first-child {
+  border-top:solid;
+}
+tr:nth-child(3n) td {
+  border-bottom:solid ;
+}
