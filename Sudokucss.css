@@ -1,7 +1,7 @@
 body
 {
 	text-align: center;
-	background-color:brown;
+	background: linear-gradient(teal,white);
 }
 #sdk
 {
@@ -20,6 +20,20 @@ input
 	text-align: center;
 	font-style: bold;
 	font-size: 20px;
+}
+h1
+{
+	font-family: 'sans-serif';
+}
+h2
+{
+	margin-left: 750px;
+}
+button
+{
+	background-color : green;
+	width:75px;
+	height: 25px;
 }
 td:nth-child(even)
 {
