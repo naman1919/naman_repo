@@ -1,52 +1,38 @@
-body
-{
+body {
 	text-align: center;
 	background: linear-gradient(teal,white);
 }
-#sdk
-{
-	margin-left:370px;
+#sdk {
+	margin-left:30%;
 }
-td,tr
-{
+td {
 	border:1px solid gray;
-	width:45px;
-	height:45px;
 }
-input
-{
+input {
+	
 	width:45px;
-	height:45px;
-	text-align: center;
+	height: 45px;
+ 	text-align: center;
+ 	font-size:30px;
 	font-style: bold;
-	font-size: 20px;
+	color: blue;
 }
-h1
-{
+h1 {
 	font-family: 'sans-serif';
 }
-h2
-{
-	margin-left: 750px;
+h2 {
+	margin-left: 76%;
 }
-button
-{
+button {
 	background-color : green;
 	width:75px;
 	height: 25px;
 }
-td:nth-child(even)
-{
-	background-color: pink;
-}
-td:first-child {
+td:first-child  {
   border-left:solid;
 }
 td:nth-child(3n) {
   border-right:solid ;
-}
-tr:first-child {
-  border-top:solid;
 }
 tr:nth-child(3n) td {
   border-bottom:solid ;
