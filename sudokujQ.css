@@ -1,0 +1,33 @@
+body {
+	text-align: center;
+	background: linear-gradient(white,teal);
+}
+#sdk {
+	margin-left:35%;
+}
+td {
+	border:1px solid gray;
+	width:45px;
+	height: 45px;
+	color: blue;
+	font-size: 25px;
+}
+.active {
+	background: lightblue;
+}
+h1 {
+	font-family: 'sans-serif';
+}
+b {
+	margin-left: 56%;
+	font-size: 25px;
+}
+td:first-child  {
+  border-left:black solid;
+}
+td:nth-child(3n) {
+  border-right: black solid ;
+}
+tr:nth-child(3n) td {
+  border-bottom:black solid ;
+}
