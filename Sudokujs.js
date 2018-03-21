@@ -81,7 +81,8 @@ function sudokuGenerator() {
     document.getElementById(0+""+i).value = ran_arr[i];  //random number for first column 
   }
  //Using Group Filling and circular shift for making solution
-  for(i = 0 ; i < 2 ; i++ ) {
+  for(i = 0 ; i < 8 ; i++ ) {
+    if(i != 2 && i!= 5){
     document.getElementById((i+1)+'0').value = document.getElementById(i+'3').value;
     document.getElementById((i+1)+'1').value = document.getElementById(i+'4').value;
     document.getElementById((i+1)+'2').value = document.getElementById(i+'5').value;
@@ -91,49 +92,18 @@ function sudokuGenerator() {
     document.getElementById((i+1)+'6').value = document.getElementById(i+'0').value;
     document.getElementById((i+1)+'7').value = document.getElementById(i+'1').value;
     document.getElementById((i+1)+'8').value = document.getElementById(i+'2').value;
-  }
-  document.getElementById('30').value = document.getElementById('21').value;
-  document.getElementById('31').value = document.getElementById('22').value;
-  document.getElementById('32').value = document.getElementById('23').value;
-  document.getElementById('33').value = document.getElementById('24').value;
-  document.getElementById('34').value = document.getElementById('25').value;
-  document.getElementById('35').value = document.getElementById('26').value;
-  document.getElementById('36').value = document.getElementById('27').value;
-  document.getElementById('37').value = document.getElementById('28').value;
-  document.getElementById('38').value = document.getElementById('20').value;
- 
-  for(i = 3 ; i < 5 ; i++ ) {
-    document.getElementById((i+1)+'0').value = document.getElementById(i+'3').value;
-    document.getElementById((i+1)+'1').value = document.getElementById(i+'4').value;
-    document.getElementById((i+1)+'2').value = document.getElementById(i+'5').value;
-    document.getElementById((i+1)+'3').value = document.getElementById(i+'6').value;
-    document.getElementById((i+1)+'4').value = document.getElementById(i+'7').value;
-    document.getElementById((i+1)+'5').value = document.getElementById(i+'8').value;
-    document.getElementById((i+1)+'6').value = document.getElementById(i+'0').value;
-    document.getElementById((i+1)+'7').value = document.getElementById(i+'1').value;
-    document.getElementById((i+1)+'8').value = document.getElementById(i+'2').value;
-  }
-
-  document.getElementById('60').value = document.getElementById('51').value;
-  document.getElementById('61').value = document.getElementById('52').value;
-  document.getElementById('62').value = document.getElementById('53').value;
-  document.getElementById('63').value = document.getElementById('54').value;
-  document.getElementById('64').value = document.getElementById('55').value;
-  document.getElementById('65').value = document.getElementById('56').value;
-  document.getElementById('66').value = document.getElementById('57').value;
-  document.getElementById('67').value = document.getElementById('58').value;
-  document.getElementById('68').value = document.getElementById('50').value;
- 
-  for(i = 6 ; i < 8 ; i++ ) {
-    document.getElementById((i+1)+'0').value = document.getElementById(i+'3').value;
-    document.getElementById((i+1)+'1').value = document.getElementById(i+'4').value;
-    document.getElementById((i+1)+'2').value = document.getElementById(i+'5').value;
-    document.getElementById((i+1)+'3').value = document.getElementById(i+'6').value;
-    document.getElementById((i+1)+'4').value = document.getElementById(i+'7').value;
-    document.getElementById((i+1)+'5').value = document.getElementById(i+'8').value;
-    document.getElementById((i+1)+'6').value = document.getElementById(i+'0').value;
-    document.getElementById((i+1)+'7').value = document.getElementById(i+'1').value;
-    document.getElementById((i+1)+'8').value = document.getElementById(i+'2').value;
+   }
+   else{
+    document.getElementById((i+1)+'0').value = document.getElementById(i+'1').value;
+    document.getElementById((i+1)+'1').value = document.getElementById(i+'2').value;
+    document.getElementById((i+1)+'2').value = document.getElementById(i+'3').value;
+    document.getElementById((i+1)+'3').value = document.getElementById(i+'4').value;
+    document.getElementById((i+1)+'4').value = document.getElementById(i+'5').value;
+    document.getElementById((i+1)+'5').value = document.getElementById(i+'6').value;
+    document.getElementById((i+1)+'6').value = document.getElementById(i+'7').value;
+    document.getElementById((i+1)+'7').value = document.getElementById(i+'8').value;
+    document.getElementById((i+1)+'8').value = document.getElementById(i+'0').value;
+   }
   }
   for(i = 0 ; i < 9 ; i++) {
     for(j = 0 ; j < 9 ; j++) {
