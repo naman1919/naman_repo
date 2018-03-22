@@ -12,9 +12,6 @@ td {
 	color: blue;
 	font-size: 25px;
 }
-.active {
-	background: lightblue;
-}
 h1 {
 	font-family: 'sans-serif';
 }
@@ -30,4 +27,7 @@ td:nth-child(3n) {
 }
 tr:nth-child(3n) td {
   border-bottom:black solid ;
+}
+tr:nth-child(1) td {
+	border-top: black solid;
 }

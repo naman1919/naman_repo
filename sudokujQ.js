@@ -1,6 +1,6 @@
-var i,j,k,inum,id,idquotient,idremainder,val,id2;
-var diff_level = 55;
-var classname,ids;
+var i,j,k,inum,id,idquotient,idremainder,id2;
+var diff_level = 85;
+var classname,ids,wincount = 0;
 var d = 0;
 $(document).ready(function(){
 	var table="<table id='tab'>";
@@ -24,8 +24,8 @@ $(document).ready(function(){
 	$("#sdk").append(table);
   sudokuGenerator();
   $("body #diff_level").click(function(){
+    id  = "";
     diff_level = $(this).val();
-  //  alert(diff_level);
     sudokuGenerator();
   })
   $("#button").click(function () {
@@ -34,46 +34,58 @@ $(document).ready(function(){
       classname = this.className;
       ids = document.getElementsByClassName(classname);
       id = $(this).attr("id");
-      var bgcolor = $("#"+id).css("background-color");
-      /*if(bgcolor != 'rgb(255,0,0)') {
-        $("#"+id2).css("background-color","white");
-      }*/
+      $("#"+id2).css("background-color","white");
       $("#"+id).css("background-color","lightblue");
       id2 = id; 
-    //  alert(id);
     })
     $(".btn").click(function() {
       var count = 0;
+      var val = 0;
       $("#"+id).css("background-color","white");
       val = $(this).val();
       $("#"+id).html(val);
-    //  alert(val);
       idquotient = Math.floor(id/10);
       idremainder = id % 10;
       for( k = 0 ; k < 9 ; k++) {
         if(id != k+""+idremainder) {
-          if(val == $("#"+k+idremainder).html() && val != ""){
-            $("#"+id).css("background-color","rgb(255,0,0)");
+          if(val == $("#"+k+idremainder).html()){
+            $("#"+id).css("color","red");
             count++;
           }
         }
         if(id != idquotient+""+k) {
-          if(val == $("#"+idquotient+k).html() && val != "") {
-            $("#"+id).css("background-color","rgb(255,0,0)");
+          if(val == $("#"+idquotient+k).html()) {
+            $("#"+id).css("color","red");
             count++;
           }
         }
         if(id != ids[k].id) {
           //alert(ids[k].id);
-          if(val == $("#"+ids[k].id).html() && val != "") {
-            $("#"+id).css("background-color","rgb(255,0,0)");
+          if(val == $("#"+ids[k].id).html()) {
+            $("#"+id).css("color","red");
             count++;
           }
         }  
         if(count < 1) {
-          $("#"+id).css("background-color","white");
+          $("#"+id).css("color","blue");
         }
       }
+      if(wincount < 81) {
+        wincount = 0;
+      } 
+      for(i = 0 ; i < 9 ; i++) {
+        for(j = 0 ; j < 9 ; j++) {
+          var bgcolor = $("#"+i+""+j).css("color");
+          if(($("#"+i+""+j).html() != "") && bgcolor != "rgb(255, 0, 0)") {
+            wincount++;
+          }
+        }
+      }
+      if(wincount > 80){
+        alert("win");
+        window.open("sudokujQ.html","_self");
+      }
+      //alert(wincount);
     })
   })
 })
@@ -113,60 +125,7 @@ function sudokuGenerator() {
       $("#"+(i+1)+'8').html($("#"+i+"0").html());
     }
   }
- /* for(i = 0 ; i < 2 ; i++) {
-    $("#"+(i+1)+'0').html($("#"+i+"3").html());
-    $("#"+(i+1)+'1').html($("#"+i+"4").html());
-    $("#"+(i+1)+'2').html($("#"+i+"5").html());
-    $("#"+(i+1)+'3').html($("#"+i+"6").html());
-    $("#"+(i+1)+'4').html($("#"+i+"7").html());
-    $("#"+(i+1)+'5').html($("#"+i+"8").html());
-    $("#"+(i+1)+'6').html($("#"+i+"0").html());
-    $("#"+(i+1)+'7').html($("#"+i+"1").html());
-    $("#"+(i+1)+'8').html($("#"+i+"2").html());
-  }
-  $("#30").html($("#21").html());
-  $("#31").html($("#22").html());
-  $("#32").html($("#23").html());
-  $("#33").html($("#24").html());
-  $("#34").html($("#25").html());
-  $("#35").html($("#26").html());
-  $("#36").html($("#27").html());
-  $("#37").html($("#28").html());
-  $("#38").html($("#20").html());
-  for( i = 3 ; i < 5 ; i++){
-    $("#"+(i+1)+'0').html($("#"+i+"3").html());
-    $("#"+(i+1)+'1').html($("#"+i+"4").html());
-    $("#"+(i+1)+'2').html($("#"+i+"5").html());
-    $("#"+(i+1)+'3').html($("#"+i+"6").html());
-    $("#"+(i+1)+'4').html($("#"+i+"7").html());
-    $("#"+(i+1)+'5').html($("#"+i+"8").html());
-    $("#"+(i+1)+'6').html($("#"+i+"0").html());
-    $("#"+(i+1)+'7').html($("#"+i+"1").html());
-    $("#"+(i+1)+'8').html($("#"+i+"2").html());
-  }
 
-  $("#60").html($("#51").html());
-  $("#61").html($("#52").html());
-  $("#62").html($("#53").html());
-  $("#63").html($("#54").html());
-  $("#64").html($("#55").html());
-  $("#65").html($("#56").html());
-  $("#66").html($("#57").html());
-  $("#67").html($("#58").html());
-  $("#68").html($("#50").html());
-
-  for( i = 6 ; i < 8 ; i++) {
-    $("#"+(i+1)+'0').html($("#"+i+"3").html());
-    $("#"+(i+1)+'1').html($("#"+i+"4").html());
-    $("#"+(i+1)+'2').html($("#"+i+"5").html());
-    $("#"+(i+1)+'3').html($("#"+i+"6").html());
-    $("#"+(i+1)+'4').html($("#"+i+"7").html());
-    $("#"+(i+1)+'5').html($("#"+i+"8").html());
-    $("#"+(i+1)+'6').html($("#"+i+"0").html());
-    $("#"+(i+1)+'7').html($("#"+i+"1").html());
-    $("#"+(i+1)+'8').html($("#"+i+"2").html());
-  }
-  */
   for( i = 0 ; i < diff_level ; i++) {
     $("#"+Math.floor(Math.random()*9)+Math.floor(Math.random()*9)).html("");
   } 
