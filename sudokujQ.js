@@ -3,25 +3,25 @@ var diff_level = 85;
 var classname,ids,wincount = 0;
 var d = 0;
 $(document).ready(function(){
-	var table="<table id='tab'>";
-	var row,cell;
-	var row1 = 0;
-	for(row = 0 ; row < 9 ; row++){
-		var col1 = 0;
-		table += "<tr>";
-		if(row%3 == 0) {
-			row1++;
-		}
-		for(cell = 0 ; cell < 9 ; cell++){
-			if(cell % 3 == 0) {
-				col1++;
-			}
-			table += "<td id='"+row+cell+"' class='"+row1+col1+"'>"+row1+col1+"</td>";
-		}
-		table += "</tr>";
-	}
-	table += "</table>";
-	$("#sdk").append(table);
+  var table="<table id='tab'>";
+  var row,cell;
+  var row1 = 0;
+  for(row = 0 ; row < 9 ; row++){
+    var col1 = 0;
+    table += "<tr>";
+    if(row%3 == 0) {
+      row1++;
+    }
+    for(cell = 0 ; cell < 9 ; cell++){
+      if(cell % 3 == 0) {
+        col1++;
+      }
+      table += "<td id='"+row+cell+"' class='"+row1+col1+"'>"+row1+col1+"</td>";
+    }
+    table += "</tr>";
+  }
+  table += "</table>";
+  $("#sdk").append(table);
   sudokuGenerator();
   $("body #diff_level").click(function(){
     id  = "";

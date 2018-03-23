@@ -1,23 +1,23 @@
 body {
-	text-align: center;
-	background: linear-gradient(white,teal);
+  text-align: center;
+  background: linear-gradient(white,teal);
 }
 #sdk {
-	margin-left:35%;
+  margin-left:35%;
 }
 td {
-	border:1px solid gray;
-	width:45px;
-	height: 45px;
-	color: blue;
-	font-size: 25px;
+  border:1px solid gray;
+  width:45px;
+  height: 45px;
+  color: blue;
+  font-size: 25px;
 }
 h1 {
-	font-family: 'sans-serif';
+  font-family: 'sans-serif';
 }
 b {
-	margin-left: 56%;
-	font-size: 25px;
+  margin-left: 56%;
+  font-size: 25px;
 }
 td:first-child  {
   border-left:black solid;
@@ -29,5 +29,5 @@ tr:nth-child(3n) td {
   border-bottom:black solid ;
 }
 tr:nth-child(1) td {
-	border-top: black solid;
+  border-top: black solid;
 }

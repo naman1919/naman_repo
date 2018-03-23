@@ -2,18 +2,18 @@ var td;
 var i,j,inum,id,id2;
 var d = 0;
 function loadSdk(){
-	var tab,row,cell,tr,td,num1;
-	tab = document.createElement('table');
-	var t2 = 0;
+  var tab,row,cell,tr,td,num1;
+  tab = document.createElement('table');
+  var t2 = 0;
   //Generate Table with required attributes
-	for(row = 0 ; row < 9 ; row++) {
-	  var t1=0;
-  	tr = document.createElement('tr');
-		if(row%3 == 0)	{
-     	t2++;
+  for(row = 0 ; row < 9 ; row++) {
+    var t1=0;
+    tr = document.createElement('tr');
+    if(row%3 == 0)  {
+      t2++;
     }
-		for(cell = 0 ; cell < 9 ; cell++) {
-		  if(cell%3 == 0)	{
+    for(cell = 0 ; cell < 9 ; cell++) {
+      if(cell%3 == 0) {
         t1++;
       }
       td = document.createElement('td');
@@ -26,17 +26,17 @@ function loadSdk(){
       tr.appendChild(td);
     }
     tab.appendChild(tr);
-	}
-	document.getElementById("sdk").appendChild(tab);
+  }
+  document.getElementById("sdk").appendChild(tab);
   sudokuGenerator();
 }
 function checkWin() {
   timeFunction();
-	for(i = 0 ; i < 9 ; i++) {
-  	for(j =0 ; j < 9 ; j++) {
+  for(i = 0 ; i < 9 ; i++) {
+    for(j =0 ; j < 9 ; j++) {
       td = document.getElementById(i+""+j);
       td.onchange = function(){
-      inum =	this.value;
+      inum =  this.value;
       id = this.id;
       id1 = this.id%10;
       id2 = Math.floor(this.id/10);
@@ -49,18 +49,18 @@ function checkWin() {
       }
       for(var k = 0 ; k < 9 ; k++) {
        //check condition for column,row and 3X3 cell
-     	  if(id != document.getElementById(k+""+id1).id) {
-     	    if(inum == document.getElementById(k+""+id1).value && inum != '') {
-     	 	    document.getElementById(id).style.color = "red";
+        if(id != document.getElementById(k+""+id1).id) {
+          if(inum == document.getElementById(k+""+id1).value && inum != '') {
+            document.getElementById(id).style.color = "red";
             count++;
-     	    }
-     	  }
-      	if(id != document.getElementById(id2+""+k).id) {
+          }
+        }
+        if(id != document.getElementById(id2+""+k).id) {
           if(inum == document.getElementById(id2+""+k).value && inum != '') {
-     		    document.getElementById(id).style.color = "red";	
+            document.getElementById(id).style.color = "red";  
             count++;
-     		  }
-     	  }
+          }
+        }
         if(id != ids[k].id) {
           if(inum == ids[k].value && inum != '') {
             document.getElementById(id).style.color = "red";
